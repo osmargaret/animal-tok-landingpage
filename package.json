@@ -1,0 +1,9 @@
+{
+  "name": "animandler-landingpage",
+  "version": "1.0.0",
+  "description": "Animandler Official Landing Page & Legal Compliance",
+  "scripts": {
+    "start": "echo 'Static site ready'",
+    "build": "echo 'Build complete'"
+  }
+}
