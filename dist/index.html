@@ -17,13 +17,19 @@
         <span class="logo-paw">🐾</span>
         <span>Anim<span class="logo-cyan">andler</span></span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#features">Features</a></li>
         <li><a href="#safety">Pet Safety</a></li>
         <li><a href="#privacy">Privacy</a></li>
         <li><a href="#terms">Terms</a></li>
         <li><a href="#download" class="btn-cta">Download App</a></li>
       </ul>
+      <div class="nav-mobile-controls">
+        <a href="#download" class="btn-cta-mobile">Get App</a>
+        <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle menu">
+          <span class="toggle-icon">☰</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -64,7 +70,7 @@
             </a>
           </div>
 
-          <div class="hero-stats">
+          <div class="hero-stats desktop-stats">
             <div class="stat-item">
               <h3>100%</h3>
               <p>Animal Focused</p>
@@ -80,27 +86,101 @@
           </div>
         </div>
 
-        <!-- Interactive Phone Mockup -->
+        <!-- Interactive Phone Mockup & App Preview -->
         <div class="phone-mockup-wrapper">
+          <div class="phone-ambient-glow"></div>
           <div class="phone-mockup">
-            <div class="phone-notch"></div>
+            <div class="phone-notch">
+              <div class="notch-lens"></div>
+            </div>
             <div class="phone-screen">
               <div class="screen-overlay"></div>
+              
+              <!-- App Top Bar -->
               <div class="screen-top">
-                <span>Anim<span style="color:#06b6d4;">andler</span></span>
-                <span>🔔</span>
+                <span class="screen-logo">Anim<span style="color:#06b6d4;">andler</span></span>
+                <div class="screen-tabs">
+                  <span class="active">For You</span>
+                  <span>Following</span>
+                </div>
+                <span class="screen-bell">🔔</span>
               </div>
+
+              <!-- Floating Action Icons -->
               <div class="screen-actions">
-                <div class="screen-action-btn">🐾</div>
-                <div class="screen-action-btn" style="border-color:#ff2b54; color:#ff2b54;">❤️</div>
-                <div class="screen-action-btn">💬</div>
-                <div class="screen-action-btn">↗️</div>
+                <div class="screen-avatar-badge">
+                  <span style="font-size: 18px;">🐶</span>
+                  <div class="avatar-plus">+</div>
+                </div>
+                <div class="screen-action-group">
+                  <div class="screen-action-btn action-heart">❤️</div>
+                  <span class="action-count">142K</span>
+                </div>
+                <div class="screen-action-group">
+                  <div class="screen-action-btn">💬</div>
+                  <span class="action-count">1.8K</span>
+                </div>
+                <div class="screen-action-group">
+                  <div class="screen-action-btn">↗️</div>
+                  <span class="action-count">4.2K</span>
+                </div>
+                <div class="screen-music-disc">
+                  <span style="font-size: 11px;">🐾</span>
+                </div>
               </div>
+
+              <!-- Caption & Audio -->
               <div class="screen-caption">
-                <h4>Bailey @bailey.thelab</h4>
-                <p>Mastering the double backflip fetch! 🎾🐶 #DogLife #Animandler</p>
+                <div class="caption-header">
+                  <h4 class="creator-name">Bailey <span class="badge-vet">🐾</span></h4>
+                  <span class="creator-handle">@bailey.thelab</span>
+                </div>
+                <p class="caption-text">Mastering the double backflip fetch! 🎾🐶 #DogLife #Animandler</p>
+                <div class="caption-sound">
+                  <span>🎵</span>
+                  <span class="sound-title">Original Sound - Bailey & Friends</span>
+                </div>
+              </div>
+
+              <!-- Bottom App Tab Bar -->
+              <div class="screen-bottom-nav">
+                <div class="nav-app-item active">
+                  <span>🏠</span>
+                  <span>Home</span>
+                </div>
+                <div class="nav-app-item">
+                  <span>🔍</span>
+                  <span>Explore</span>
+                </div>
+                <div class="nav-app-create">
+                  <span class="create-btn">+</span>
+                </div>
+                <div class="nav-app-item">
+                  <span>💬</span>
+                  <span>Inbox</span>
+                </div>
+                <div class="nav-app-item">
+                  <span>👤</span>
+                  <span>Profile</span>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Mobile Stats (displayed right below phone mockup on phones) -->
+        <div class="hero-stats mobile-stats">
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>Animal Focused</p>
+          </div>
+          <div class="stat-item">
+            <h3>Verified</h3>
+            <p>Vet Profiles</p>
+          </div>
+          <div class="stat-item">
+            <h3>Zero</h3>
+            <p>Cruelty Tolerance</p>
           </div>
         </div>
       </div>
@@ -307,6 +387,26 @@
     </div>
   </footer>
 
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+        const icon = navToggle.querySelector('.toggle-icon');
+        if (icon) {
+          icon.textContent = navLinks.classList.contains('nav-open') ? '✕' : '☰';
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('nav-open');
+          const icon = navToggle.querySelector('.toggle-icon');
+          if (icon) icon.textContent = '☰';
+        });
+      });
+    }
+  </script>
 </body>
 </html>
 
