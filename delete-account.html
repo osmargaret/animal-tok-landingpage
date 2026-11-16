@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete My Account — Animandler</title>
+  <meta name="description" content="Request permanent deletion of your Animandler account and all associated data." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🐾 Anim<span class="logo-cyan">andler</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="delete-account.html" class="active">Delete Account</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- LEGAL WRAPPER -->
+  <div class="legal-wrapper">
+    <div class="container">
+      <div class="legal-header">
+        <h1 class="legal-title">Account &amp; Data Deletion</h1>
+        <p class="legal-meta">Submit a request to permanently delete your Animandler account and all associated data.</p>
+      </div>
+
+      <div class="legal-content">
+
+        <!-- Warning Banner -->
+        <div class="deletion-warning">
+          <div class="deletion-warning-icon">⚠️</div>
+          <div>
+            <h3>This action is permanent and irreversible</h3>
+            <p>Once your deletion request is processed, your account and all data cannot be recovered.</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <h2>What Gets Deleted</h2>
+          <p>When we process your deletion request, we will permanently remove:</p>
+          <ul>
+            <li>✓ Your profile (name, username, email, bio, avatar, cover photo)</li>
+            <li>✓ All your posts (videos, images, captions)</li>
+            <li>✓ All your comments and replies</li>
+            <li>✓ All your likes and bookmarks</li>
+            <li>✓ Your followers and following lists</li>
+            <li>✓ Your messages and conversations</li>
+            <li>✓ Your marketplace listings and purchase history</li>
+            <li>✓ All device tokens and session data</li>
+          </ul>
+          <p><strong>Note:</strong> Basic transaction records may be retained for up to 7 years as required by financial regulations. These records will not be linked to your identity in any publicly accessible way.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>How Long It Takes</h2>
+          <p>Your deletion request will be processed within <strong>30 days</strong> of submission. You will receive a confirmation email once the deletion is complete. During this period, your account will be deactivated and invisible to other users.</p>
+          <p>If you log back in during the 30-day window, your deletion request will be cancelled and your account will be restored.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Alternative: Delete From the App</h2>
+          <p>You can also delete your account directly from within the Animandler app:</p>
+          <ol>
+            <li>Go to your <strong>Profile</strong> tab</li>
+            <li>Tap the <strong>Settings</strong> (⚙️) icon</li>
+            <li>Scroll to <strong>Account</strong> section</li>
+            <li>Tap <strong>"Delete Account"</strong></li>
+            <li>Follow the confirmation steps</li>
+          </ol>
+        </div>
+
+        <!-- DELETION REQUEST FORM -->
+        <div class="deletion-form-card">
+          <h2 style="margin-bottom: 0.5rem; color: #f8fafc;">Submit a Deletion Request</h2>
+          <p style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.9rem;">Fill out the form below and we will process your request within 30 days. You will receive a confirmation email.</p>
+
+          <form
+            action="mailto:support@animandler.app"
+            method="post"
+            enctype="text/plain"
+            id="deletionForm"
+          >
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address <span style="color:#ef4444;">*</span></label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="The email address you used to register"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="username">Username <span style="color:#ef4444;">*</span></label>
+              <input
+                class="form-input"
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Your @username on Animandler"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reason">Reason for Deletion <span style="color:#94a3b8;">(optional)</span></label>
+              <textarea
+                class="form-textarea"
+                id="reason"
+                name="reason"
+                placeholder="Help us improve — why are you leaving? (optional)"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div class="form-group form-checkbox-group">
+              <label class="form-checkbox-label">
+                <input type="checkbox" id="confirm" name="confirm" required />
+                <span>I understand that deleting my account is <strong>permanent and irreversible</strong>. All my data, posts, comments, messages, and history will be permanently removed.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              🗑️ Submit Deletion Request
+            </button>
+          </form>
+
+          <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #64748b; text-align: center;">
+            Alternatively, email us directly at
+            <a href="mailto:support@animandler.app?subject=Account%20Deletion%20Request" style="color: #06b6d4;">support@animandler.app</a>
+            with the subject line <strong>"Account Deletion Request"</strong>.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Questions?</h2>
+          <p>If you have any concerns about your data or the deletion process, contact our support team:</p>
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:support@animandler.app">support@animandler.app</a></li>
+            <li><strong>Response time:</strong> Within 5 business days</li>
+          </ul>
+          <p>For more information about how we handle your data, please read our <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">🐾 Anim<span class="logo-cyan">andler</span></div>
+          <p class="footer-tagline">The social platform built for pet lovers, handlers &amp; vets.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="delete-account.html">Delete My Account</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#download">Download</a></li>
+            <li><a href="mailto:support@animandler.app">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="mailto:support@animandler.app">support@animandler.app</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Animandler. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
