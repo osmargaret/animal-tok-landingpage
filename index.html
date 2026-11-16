@@ -74,6 +74,12 @@
               <div class="notch-lens"></div>
             </div>
             <div class="phone-screen">
+              <!-- Video Slides (pet photos cycling like TikTok) -->
+              <div class="video-slide active" style="background-image: url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=800&auto=format&fit=crop&q=80')"></div>
+              <div class="video-slide" style="background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&auto=format&fit=crop&q=80')"></div>
+              <div class="video-slide" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&auto=format&fit=crop&q=80')"></div>
+              <div class="video-slide" style="background-image: url('https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=800&auto=format&fit=crop&q=80')"></div>
+
               <div class="screen-overlay"></div>
               
               <!-- App Top Bar -->
@@ -105,18 +111,29 @@
                 </div>
               </div>
 
+              <!-- Video Progress Bar -->
+              <div class="video-progress-bar">
+                <div class="video-progress-fill"></div>
+              </div>
+
+              <!-- Play Indicator -->
+              <div class="play-pulse" id="playPulse">▶</div>
+
               <!-- Caption & Audio -->
-              <div class="screen-caption">
+              <div class="screen-caption" id="screenCaption">
                 <div class="caption-header">
-                  <h4 class="creator-name">Bailey <span class="badge-vet">🐾</span></h4>
-                  <span class="creator-handle">@bailey.thelab</span>
+                  <h4 class="creator-name" id="creatorName">Bailey <span class="badge-vet">🐾</span></h4>
+                  <span class="creator-handle" id="creatorHandle">@bailey.thelab</span>
                 </div>
-                <p class="caption-text">Mastering the double backflip fetch! 🎾🐶 #DogLife #Animandler</p>
+                <p class="caption-text" id="captionText">Mastering the double backflip fetch! 🎾🐶 #DogLife #Animandler</p>
                 <div class="caption-sound">
                   <span>🎵</span>
-                  <span class="sound-title">Original Sound - Bailey & Friends</span>
+                  <span class="sound-title" id="soundTitle">Original Sound - Bailey & Friends</span>
                 </div>
               </div>
+
+              <!-- Swipe Hint -->
+              <div class="swipe-hint">↑ swipe for next</div>
 
               <!-- Bottom App Tab Bar -->
               <div class="screen-bottom-nav">
@@ -393,6 +410,130 @@
         desktopBtn.target = '_blank';
         desktopBtn.rel = 'noopener';
       }
+    })();
+
+    // ── Phone Mockup Video Slideshow ──────────────────────────────────────
+    (function() {
+      var clips = [
+        {
+          creator: 'Bailey <span class="badge-vet">🐾</span>',
+          handle: '@bailey.thelab',
+          caption: 'Mastering the double backflip fetch! 🎾🐶 #DogLife #Animandler',
+          sound: 'Original Sound - Bailey & Friends',
+          likes: '142K', comments: '1.8K', shares: '4.2K'
+        },
+        {
+          creator: 'Luna 🐈 <span class="badge-vet">✅</span>',
+          handle: '@luna.paws',
+          caption: 'Zoomies at 3am are my cardio 😂🐾 #CatsOfAnimandler #Vibes',
+          sound: 'Trending - Pet Sounds Vol.3',
+          likes: '89K', comments: '3.1K', shares: '7.6K'
+        },
+        {
+          creator: 'Dr. Kofi <span class="badge-vet">🩺</span>',
+          handle: '@vet.kofi.gh',
+          caption: 'Vaccine day success! Brave boy 🐶❤️ #VetLife #PetCare',
+          sound: 'Feel Good - Tropical Vibes',
+          likes: '201K', comments: '5.4K', shares: '12K'
+        },
+        {
+          creator: 'Mango 🐦 <span class="badge-vet">🐾</span>',
+          handle: '@mango.parrot',
+          caption: 'Teaching my human how to dance 🕺🦜 #ParrotLife #Animandler',
+          sound: 'Dance With Me - Pet Edition',
+          likes: '310K', comments: '8.9K', shares: '21K'
+        }
+      ];
+
+      var slides = document.querySelectorAll('.video-slide');
+      var current = 0;
+      var total = slides.length;
+
+      var nameEl    = document.getElementById('creatorName');
+      var handleEl  = document.getElementById('creatorHandle');
+      var captionEl = document.getElementById('captionText');
+      var soundEl   = document.getElementById('soundTitle');
+      var captionWrap = document.getElementById('screenCaption');
+      var heartBtn  = document.querySelector('.action-heart');
+      var likesEl   = heartBtn ? heartBtn.nextElementSibling : null;
+      var progressFill = document.querySelector('.video-progress-fill');
+      var playPulse = document.getElementById('playPulse');
+
+      function triggerHeartPop(clip) {
+        if (!heartBtn) return;
+        heartBtn.classList.remove('popping');
+        void heartBtn.offsetWidth; // reflow
+        heartBtn.classList.add('popping');
+        if (likesEl) likesEl.textContent = clip.likes;
+
+        // floating heart
+        var phone = document.querySelector('.phone-screen');
+        var fh = document.createElement('div');
+        fh.className = 'floating-heart';
+        fh.textContent = '❤️';
+        fh.style.bottom = (80 + Math.random() * 40) + 'px';
+        phone.appendChild(fh);
+        setTimeout(function() { fh.remove(); }, 1200);
+      }
+
+      function goToSlide(next) {
+        // exit current
+        slides[current].classList.remove('active');
+        slides[current].classList.add('exit');
+        setTimeout(function() {
+          slides[current].classList.remove('exit');
+        }, 700);
+
+        current = next;
+
+        // enter next
+        slides[current].classList.add('active');
+
+        // Update caption
+        var clip = clips[current];
+        if (nameEl) nameEl.innerHTML = clip.creator;
+        if (handleEl) handleEl.textContent = clip.handle;
+        if (captionEl) captionEl.textContent = clip.caption;
+        if (soundEl) soundEl.textContent = clip.sound;
+
+        // Caption slide-in
+        if (captionWrap) {
+          captionWrap.classList.remove('slide-in');
+          void captionWrap.offsetWidth;
+          captionWrap.classList.add('slide-in');
+        }
+
+        // Play pulse
+        if (playPulse) {
+          playPulse.classList.add('repulse');
+          void playPulse.offsetWidth;
+          playPulse.classList.remove('repulse');
+          playPulse.classList.add('replay');
+          setTimeout(function() { playPulse.classList.remove('replay'); }, 50);
+          playPulse.style.animation = 'none';
+          void playPulse.offsetWidth;
+          playPulse.style.animation = 'playFadeOut 1.2s ease 0.1s forwards';
+        }
+
+        // Progress bar restart
+        if (progressFill) {
+          progressFill.style.animation = 'none';
+          void progressFill.offsetWidth;
+          progressFill.style.animation = 'progressFill 5s linear forwards';
+        }
+
+        // Heart pop with slight delay
+        setTimeout(function() { triggerHeartPop(clip); }, 1800);
+      }
+
+      // Auto-advance every 5 seconds
+      setInterval(function() {
+        var next = (current + 1) % total;
+        goToSlide(next);
+      }, 5000);
+
+      // Initial heart pop
+      setTimeout(function() { triggerHeartPop(clips[0]); }, 1800);
     })();
 
     // Hamburger nav toggle
