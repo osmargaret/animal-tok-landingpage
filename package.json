@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Animandler Official Landing Page & Legal Compliance",
   "scripts": {
-    "start": "echo 'Static site ready'",
-    "build": "echo 'Build complete'"
+    "start": "echo 'Ready'",
+    "build": "mkdir -p dist && cp -r index.html privacy.html terms.html delete-account.html styles.css dist/ 2>/dev/null || true"
   }
 }
