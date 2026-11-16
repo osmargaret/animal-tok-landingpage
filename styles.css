@@ -774,3 +774,107 @@ a:hover {
 .nav-links a.active {
   color: var(--accent-cyan);
 }
+
+
+/* ============================================
+   ENHANCED LEGAL PAGE STYLES (Cards & Typography)
+   ============================================ */
+.legal-wrapper {
+  padding: 50px 0 90px;
+  background: var(--bg-primary);
+  min-height: calc(100vh - 72px - 250px);
+}
+
+.legal-content {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.legal-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 40px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.legal-title {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.legal-meta {
+  color: var(--accent-cyan);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.legal-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.legal-section h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legal-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin: 20px 0 8px;
+}
+
+.legal-section p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.legal-section ul,
+.legal-section ol {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.75;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.legal-section li {
+  margin-bottom: 8px;
+}
+
+.legal-section a {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.legal-section a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .legal-section {
+    padding: 24px 20px;
+  }
+  .legal-title {
+    font-size: 28px;
+  }
+}

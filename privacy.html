@@ -10,20 +10,26 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">🐾 Anim<span class="logo-cyan">andler</span></a>
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-paw">🐾</span>
+        <span>Anim<span class="logo-cyan">andler</span></span>
+      </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="privacy.html" class="active">Privacy</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#safety">Pet Safety</a></li>
+        <li><a href="privacy.html" class="active">Privacy Policy</a></li>
         <li><a href="terms.html">Terms</a></li>
         <li><a href="delete-account.html">Delete Account</a></li>
+        <li><a href="index.html#download" class="btn-cta">Download App</a></li>
       </ul>
     </div>
-  </nav>
+  </header>
 
-  <!-- LEGAL WRAPPER -->
+  <!-- Legal Content Wrapper -->
   <div class="legal-wrapper">
     <div class="container">
       <div class="legal-header">
@@ -42,10 +48,10 @@
 
         <div class="legal-section">
           <h2>2. Information We Collect</h2>
-          <p>We collect the following categories of information:</p>
+          <p>We collect the following categories of information to provide and improve your experience:</p>
 
           <h3>A. Account Information</h3>
-          <p>When you register, we collect your <strong>full name</strong>, <strong>email address</strong>, <strong>username</strong>, and <strong>password</strong> (stored as a bcrypt hash — we never store plain-text passwords). You may also optionally provide a <strong>bio</strong>, <strong>location</strong>, and <strong>professional title</strong>.</p>
+          <p>When you register, we collect your <strong>full name</strong>, <strong>email address</strong>, <strong>username</strong>, and <strong>password</strong> (stored as a secure bcrypt hash — we never store plain-text passwords). You may also optionally provide a bio, location, and professional title.</p>
 
           <h3>B. Profile Content</h3>
           <p>You may upload a <strong>profile photo (avatar)</strong> and <strong>cover image</strong>. These are stored securely via Cloudinary (our media CDN).</p>
@@ -54,13 +60,13 @@
           <p>Any <strong>videos, images, captions, comments, likes, bookmarks</strong>, and <strong>marketplace listings</strong> you create or interact with are stored and associated with your account.</p>
 
           <h3>D. Usage and Device Data</h3>
-          <p>We automatically collect limited technical information including <strong>device type</strong>, <strong>operating system version</strong>, <strong>app version</strong>, and <strong>in-app interactions</strong> (e.g., screens viewed, features used). We do not collect precise GPS location.</p>
+          <p>We automatically collect limited technical information including <strong>device type</strong>, <strong>operating system version</strong>, <strong>app version</strong>, and <strong>in-app interactions</strong> (e.g., screens viewed, features used). We do not collect continuous GPS location.</p>
 
           <h3>E. Communication Data</h3>
-          <p>When you request a One-Time Password (OTP) for account verification or login, we send a transactional email via <strong>Resend</strong>. We retain a log of sent emails for security and troubleshooting purposes.</p>
+          <p>When you request a One-Time Password (OTP) for account verification or password reset, we send a transactional email via <strong>Resend</strong>. We retain a log of sent emails for security purposes.</p>
 
           <h3>F. Payment Data</h3>
-          <p>If you use our Marketplace or service-booking features, payment processing is handled entirely by <strong>Paystack</strong>. Animandler does not store your card numbers or sensitive payment credentials. We only receive confirmation of successful transactions.</p>
+          <p>If you use our Marketplace or service-booking features, payment processing is handled entirely by <strong>Paystack</strong>. Animandler does not store your card numbers or sensitive payment credentials.</p>
         </div>
 
         <div class="legal-section">
@@ -80,16 +86,16 @@
 
         <div class="legal-section">
           <h2>4. Information We Share</h2>
-          <p>We share your data only with the following trusted service providers who process it on our behalf:</p>
+          <p>We share your data only with trusted service providers who process it on our behalf:</p>
           <ul>
             <li><strong>Cloudinary</strong> — Media storage and delivery (CDN) for all uploaded photos and videos.</li>
-            <li><strong>Neon PostgreSQL</strong> — Managed cloud database (hosted in US-East region) where your account data, posts, and interactions are stored.</li>
+            <li><strong>Neon PostgreSQL</strong> — Managed cloud database (US-East region) where your account data, posts, and interactions are stored.</li>
             <li><strong>Render</strong> — Cloud hosting provider for our backend API servers.</li>
             <li><strong>Resend</strong> — Transactional email provider for OTP and account notification emails.</li>
-            <li><strong>Paystack</strong> — Payment processor for marketplace and service-booking transactions. Subject to Paystack's own privacy policy.</li>
+            <li><strong>Paystack</strong> — Payment processor for marketplace and service-booking transactions.</li>
             <li><strong>Socket.io</strong> — Real-time messaging infrastructure embedded in our backend.</li>
           </ul>
-          <p>All providers are contractually obligated to use your data only to provide their services to us. We may also disclose information if required by law or to protect the safety of users.</p>
+          <p>All providers are contractually obligated to use your data only to provide their services to us.</p>
         </div>
 
         <div class="legal-section">
@@ -104,48 +110,36 @@
 
         <div class="legal-section">
           <h2>6. Your Rights and Choices</h2>
-          <p>Depending on your location, you may have the following rights:</p>
+          <p>Depending on your location, you have the following rights:</p>
           <ul>
             <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
             <li><strong>Correction:</strong> Update inaccurate or incomplete information via your profile settings in the app.</li>
             <li><strong>Deletion:</strong> Request permanent deletion of your account and all associated data via our <a href="delete-account.html">Account Deletion page</a> or by emailing <a href="mailto:support@animandler.app">support@animandler.app</a>.</li>
             <li><strong>Data Portability:</strong> Request a machine-readable export of your data.</li>
-            <li><strong>Withdraw Consent:</strong> You may delete your account at any time to withdraw your consent to data processing.</li>
-            <li><strong>Opt-Out of Communications:</strong> Since we only send transactional emails (OTP), there are no marketing emails to unsubscribe from at this time.</li>
+            <li><strong>Withdraw Consent:</strong> You may delete your account at any time to withdraw your consent.</li>
           </ul>
-          <p>To exercise any of these rights, email us at <a href="mailto:support@animandler.app">support@animandler.app</a>. We will respond within 30 days.</p>
+          <p>To exercise any of these rights, email us at <a href="mailto:support@animandler.app">support@animandler.app</a>.</p>
         </div>
 
         <div class="legal-section">
           <h2>7. Children's Privacy</h2>
-          <p>Animandler is intended for users aged <strong>13 and older</strong>. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has created an account, please contact us immediately at <a href="mailto:support@animandler.app">support@animandler.app</a> and we will promptly delete the account and all associated data.</p>
+          <p>Animandler is intended for users aged <strong>13 and older</strong>. We do not knowingly collect personal information from children under 13. If you believe your child has created an account, please contact us immediately at <a href="mailto:support@animandler.app">support@animandler.app</a> and we will promptly remove the account.</p>
         </div>
 
         <div class="legal-section">
           <h2>8. Security</h2>
-          <p>We take reasonable technical and organizational measures to protect your data:</p>
+          <p>We take comprehensive technical and organizational measures to protect your data:</p>
           <ul>
             <li><strong>Passwords</strong> are hashed using bcrypt — they are never stored in plain text.</li>
             <li><strong>Data in transit</strong> is encrypted using TLS (HTTPS).</li>
             <li><strong>Database connections</strong> use Neon SSL encryption.</li>
             <li><strong>Media files</strong> are stored on Cloudinary with access control policies.</li>
           </ul>
-          <p>No system is 100% secure. If you suspect unauthorized access to your account, please change your password immediately and contact us.</p>
         </div>
 
         <div class="legal-section">
-          <h2>9. International Data Transfers</h2>
-          <p>Animandler is operated from the United States. Our database is hosted in the US-East region. If you are accessing the Service from outside the United States, your data will be transferred to and processed in the United States. By using the Service, you consent to this transfer.</p>
-        </div>
-
-        <div class="legal-section">
-          <h2>10. Changes to This Policy</h2>
-          <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page and notify active users through an in-app notification. Your continued use of the Service after any changes constitutes your acceptance of the updated policy.</p>
-        </div>
-
-        <div class="legal-section">
-          <h2>11. Contact Us</h2>
-          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please reach out to us:</p>
+          <h2>9. Contact Us</h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data:</p>
           <ul>
             <li><strong>Email:</strong> <a href="mailto:support@animandler.app">support@animandler.app</a></li>
             <li><strong>Platform:</strong> Animandler Mobile App (Android)</li>
@@ -157,43 +151,52 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo">🐾 Anim<span class="logo-cyan">andler</span></div>
-          <p class="footer-tagline">The social platform built for pet lovers, handlers &amp; vets.</p>
+          <a href="index.html" class="logo">
+            <span class="logo-paw">🐾</span>
+            <span>Anim<span class="logo-cyan">andler</span></span>
+          </a>
+          <p>The global entertainment and care platform for companion animals, pet handlers, and licensed veterinarians.</p>
         </div>
+
         <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#download">Download for Android</a></li>
+            <li><a href="index.html#safety">Community Guidelines</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal &amp; Safety</h4>
+          <ul class="footer-links">
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="delete-account.html">Delete My Account</a></li>
+            <li><a href="delete-account.html">Request Account Deletion</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#download">Download</a></li>
-            <li><a href="mailto:support@animandler.app">Contact Us</a></li>
-          </ul>
-        </div>
+
         <div class="footer-col">
           <h4>Support</h4>
-          <ul>
+          <ul class="footer-links">
             <li><a href="mailto:support@animandler.app">support@animandler.app</a></li>
+            <li><a href="delete-account.html">Data Privacy Inquiries</a></li>
+            <li><span>Austin, TX &amp; Global Community</span></li>
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2026 Animandler. All rights reserved.</p>
+        <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
       </div>
     </div>
   </footer>
 
 </body>
 </html>
-
